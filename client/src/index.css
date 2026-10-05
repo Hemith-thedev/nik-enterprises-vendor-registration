@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "tailwindcss";
+
+@layer {
+  body {
+    @apply font-["Nunito"];
+  }
+}
+
+@utility form-group {
+  @apply flex h-fit w-full flex-col items-start justify-start;
+
+  & label {
+    @apply font-bold;
+    &.required {
+      &::after {
+        @apply ml-1 font-normal! text-red-500 content-["*"];
+      }
+    }
+  }
+  & input,
+  & textarea {
+    @apply w-full rounded-md border border-[#0000002d] px-3 py-2 outline-none focus:border-[#86b7fe];
+  }
+  & .radio-button {
+    @apply flex;
+
+    & p,
+    & label {
+      @apply text-nowrap;
+    }
+  }
+}
